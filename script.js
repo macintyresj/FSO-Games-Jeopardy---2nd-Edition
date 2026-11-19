@@ -220,7 +220,7 @@ function checkAnswer(correct, cat, pt) {
       player.score += pt;
       // turno sigue
     } else {
-      if(cat !== "TAX" && cat !== "ACRONIMOS") player.score -= pt;
+      if(cat !== "Tax Technical" && cat !== "Acrónimos") player.score -= pt;
       currentPlayer = (currentPlayer + 1) % players.length;
     }
 
