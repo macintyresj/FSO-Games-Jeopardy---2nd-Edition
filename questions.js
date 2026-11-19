@@ -1,168 +1,123 @@
 const questions = {
-  ACRONIMOS: [
-    {question: "IRS refers to?", options: ["Income Return System", "Internal Revenue Service", "Internal Review System"], answer: "Internal Revenue Service", points: 1000},
-    {question: "What does BTC mean in tax context?", options: [ "Bank Tax Credit", "Basic Tax Calculation", "Business Tax Compliance", "Business Trust Corporation"], answer: "Business Tax Compliance", points: 2500},
-    {question: "FSO refers to?", options: [ "Federal Securities Organization", "Finance and Strategy Office", "Foreign Service Operations", "Financial Service Office"], answer: "Financial Service Office", points: 1500},
-    {question: "What does AICPA stand for?", options: [ "Association of International Corporate and Public Accountants", "American Institute of Certified Public Accountants", "Accounting Institute of Certified Professionals in America", "American Internal Corporate Public Auditors"], answer: "American Institute of Certified Public Accountants", points: 3500},
-    {question: "CR stands for in GDS?", options: [ "Capital Reporting", "Compliance Review", "Cash Reconciliation", "Corporate Responsibility"], answer: "Corporate Responsibility", points: 2500},
-    {question: "TARAS means?", options: ["Tax Accounting and Risk Advisory Services", "Tax and Revenue Audit Service", "Transaction Accounting Risk Assessment Service", "Trust and Accounting Regulatory Advisory System"], answer: "Tax Accounting and Risk Advisory Services", points: 2500},
-    {question: "EBII stands for?", options: ["Estimated Business Investment Income","Excess Business Interest Income",  "Excess Bonus Investment Interest", "Effective Business Income Increment"], answer: "Excess Business Interest Income", points: 2500},
-    {question: "EBIE stands for?", options: [ "Estimated Bonus Interest Expense", "Excess Book Interest Expense","Excess Business Interest Expense", "Effective Business Investment Expense"], answer: "Excess Business Interest Expense", points: 2500},
-    {question: "ATI refers to?", options: ["Annual Taxable Investment", "Accounting Taxable Income", "Adjusted Taxable Income", "Accumulated Taxable Income"], answer: "Adjusted Taxable Income", points: 3500},
-    {question: "UBTI means?", options: [ "Universal Business Taxable Investment", "Undistributed Business Taxable Income", "Unrelated Business Taxable Income", "United Business Tax Indicator"], answer: "Unrelated Business Taxable Income", points: 1000},
-    {question: "PTIN stands for?", options: ["Preparer Tax Identification Number", "Professional Tax Identification Number", "Primary Taxpayer Identification Number", "Partnership Tax Identification Number"], answer: "Preparer Tax Identification Number", points: 1500},
-    {question: "EIN stands for?", options: [ "Employee Identification Number", "Employer Identification Number","Entity Identification Number", "Enterprise Internal Number"], answer: "Employer Identification Number", points: 1500},
-    {question: "SSN refers to?", options: ["Standard Service Number", "Social Savings Number","Social Security Number",  "State Security Number"], answer: "Social Security Number", points: 1500},
-    {question: "GTP means?", options: ["Global Tax Platform", "General Tax Procedure", "Government Tax Policy", "Global Transaction Protocol"], answer: "Global Tax Platform", points: 1000},
-    {question: "AFS refers to?", options: [ "Accounting Financial Summary", "Annual Fiscal Statement", "Adjusted Financial Schedule", "Audited Financial Statement",], answer: "Audited Financial Statement", points: 1000},
-    {question: "CAM stands for?", options: ["Chart of Accounts Module", "Capital Accounting Management", "Corporate Audit Module", "Cash Allocation Module"], answer: "Chart of Accounts Module", points: 5000},
-    {question: "SOW stands for?", options: ["Sales order Worksheet", "Service oriented Workflow", "Statement of Work", "Scope of Work"], answer: "Statement of Work", points: 5000},
-    {question: "BCP stands for?", options: [ "Business change Process", "Business comunication Plan", "Business continuity Plan", "Business continuity Protocol"], answer: "Business continuity Plan", points: 5000},
-    {question: "what is FDAP?", options: [ "Foreign Derived Annual Profit", "Fixed, Determinable, Annual or Periodical Income", "Federal Deductible Adjusted Payment", "Final Deferred Asset Profit"], answer: "Fixed, Determinable, Annual or Periodical Income", points: 1500}
+  "Acrónimos": [
+    {question: "¿Qué significan las siglas IRS?", options: ["A) Internal Revenue Service", "B) International Revenue System", "C) Internal Reporting Service", "D) Income Revenue Service"], answer: "A) Internal Revenue Service", points: 1000},
+    {question: "¿Qué significan las siglas GTP?", options: ["A) Global Tax Process", "B) General Tax Program", "C) Global Tax Platform", "D) Global Transfer Pricing"], answer: "C) Global Tax Platform", points: 1000},
+    {question: "¿Qué significan las siglas SSN?", options: ["A) Social Security Number", "B) Standard Security Number", "C) Social Services Number", "D) Secure System Number"], answer: "A) Social Security Number", points: 1000},
+    {question: "¿Qué significan las siglas PTIN?", options: ["A) Preparer Tax Identification Number", "B) Professional Tax Identification Number", "C) Primary Taxpayer Identification Number", "D) Partnership Tax Identification Number"], answer: "A) Preparer Tax Identification Number", points: 1000},
+    {question: "¿Qué significan las siglas EIN?", options: ["A) Employee Identification Number", "B) Employer Identification Number", "C) Entity Identification Number", "D) Enterprise Internal Number"], answer: "B) Employer Identification Number", points: 1500},
+    {question: "¿Qué significan las siglas PTET?", options: ["A) Partnership Tax Election Treatment", "B) Pass-Through Entity Tax", "C) Provisional Tax on Entity Transactions", "D) Passive Taxable Earnings Treatment"], answer: "B) Pass-Through Entity Tax", points: 1500},
+    {question: "¿Qué significan las siglas AICPA?", options: ["A) Association of International Certified Professional Accountants", "B) American Institution for Corporate and Public Accounting", "C) Association of Independent Certified Public Accountants", "D) American Institute of Certified Public Accountants"], answer: "D) American Institute of Certified Public Accountants", points: 1500},
+    {question: "¿En inteligencia artificial, qué significan las siglas LLM?", options: ["A) Logical Learning Machine", "B) Large Language Model", "C) Linear Language Method", "D) Large Learning Mechanism"], answer: "B) Large Language Model", points: 1500},
+    {question: "¿En U.S. Tax, qué significan las siglas PFIC?", options: ["A) Private Foreign Investment Corporation", "B) Passive Foreign Investment Company", "C) Partnership Foreign Income Classification", "D) Passive Fund Investment Credit"], answer: "B) Passive Foreign Investment Company", points: 2500},
+    {question: "¿Qué significan las siglas SOW?", options: ["A) Sales Order Worksheet", "B) Service Oriented Workflow", "C) Statement of Work", "D) Scope of Work"], answer: "C) Statement of Work", points: 2500},
+    {question: "¿En U.S. Tax, a qué se refieren las siglas ATI?", options: ["A) Annual Taxable Investment", "B) Accounting Taxable Income", "C) Adjusted Taxable Income", "D) Accumulated Taxable Income"], answer: "C) Adjusted Taxable Income", points: 2500},
+    {question: "¿En U.S. Tax, qué significan las siglas EBIE?", options: ["A) Estimated Bonus Interest Expense", "B) Excess Book Interest Expense", "C) Excess Business Interest Expense", "D) Effective Business Investment Expense"], answer: "C) Excess Business Interest Expense", points: 2500},
+    {question: "¿Qué significan las siglas VAT?", options: ["A) Value Added Tax", "B) Variable Amount Tax", "C) Value Assessment Tax", "D) Verified Annual Tax"], answer: "A) Value Added Tax", points: 3500},
+    {question: "¿En U.S. Tax, qué significan las siglas EBII?", options: ["A) Estimated Business Investment Income", "B) Excess Business Interest Income", "C) Excess Bonus Investment Interest", "D) Effective Business Income Increment"], answer: "B) Excess Business Interest Income", points: 3500},
+    {question: "¿Qué significan las siglas EBITDA?", options: ["A) Earnings Before Interest, Taxes, Depreciation, and Amortization", "B) Estimated Business Income During Tax Assessment", "C) Earnings Before Investments, Trading, Debt, and Assets", "D) Equity Before Income, Taxes, Debt, and Amortization"], answer: "A) Earnings Before Interest, Taxes, Depreciation, and Amortization", points: 3500},
+    {question: "¿En U.S. Tax, qué significan las siglas FDAP?", options: ["A) Foreign-Derived Allocable Profit", "B) Federal Distributable Annual Proceeds", "C) Fixed, Determinable, Annual, or Periodical", "D) Foreign Dividend and Partnership Income"], answer: "C) Fixed, Determinable, Annual, or Periodical", points: 5000},
+    {question: "¿En GTP, qué significan las siglas CAM?", options: ["A) Chart of Accounts Module", "B) Capital Accounting Management", "C) Corporate Audit Module", "D) Cash Allocation Module"], answer: "A) Chart of Accounts Module", points: 5000},
+    {question: "¿Qué significan las siglas TARAS?", options: ["A) Tax Accounting and Risk Advisory Services", "B) Tax Accounting and Revenue Audit Service", "C) Transaction Accounting Risk Assessment Service", "D) Trust and Accounting Regulatory Advisory System"], answer: "A) Tax Accounting and Risk Advisory Services", points: 5000}
   ],
-  TAX: [
-    {question: "What’s the difference between a favorable and an unfavorable M-1?", options: ["Favorable reduces taxable income; unfavorable increases it", "Favorable increases taxable income; unfavorable reduces it", "Favorable has no effect; unfavorable increases it", "Favorable decreases book income; unfavorable increases book income"], answer: "Favorable reduces taxable income; unfavorable increases it", points: 1000},
-    {question: "When you are working on a fund that is initial, which election allows recognition of deductions without doing economic performance year by year?", options: ["Capitalization of amortization expenses election", "Recurring item election", "Bond depreciation election"], answer: "Recurring item election", points: 1000},
-    {question: "Do partnerships pay taxes?", options: ["Yes", "No"], answer: "No", points: 1000},
-    {question: "How are most Private Equity firms structured?", options: ["Corporations", "Sole Proprietorship", "Partnerships", "Trusts"], answer: "Partnerships", points: 1000},
-    // {question: "Can you name at least 4 types of taxpayers?", options: ["Individual, Estate, Trust, C Corporation, S Corporation, LLC, Partnership, Foreign governments"], answer: "Individual, Estate, Trust, C Corporation, S Corporation, LLC, Partnership, Foreign governments", points: 1000},
-    {question: "Which partnership is required to file entire Schedule M-3 with Form 1065?", options: ["$5M assets & $20M receipts", "$40M assets & $30M receipts", "$9M assets & $34M receipts", "$10M assets & $36M receipts"], answer: "$10M assets & $36M receipts", points: 2500},
-    {question: "How many times do you need to renew your PTIN?", options: ["Once a year", "Every 2 years", "Every 3 years", "Only at hire"], answer: "Once a year", points: 1000},
-    {question: "When do you need to prepare a 1042 return?", options: ["When you have foreign partners with allocated FDAP income", "Every year regardless", "Only for domestic partnerships", "Never"], answer: "When you have foreign partners with allocated FDAP income", points: 1000},
-    {question: "Partnerships do not pay taxes. True or False?", options: ["True", "False"], answer: "True", points: 1000},
-    {question: "Which of the following factors is generally not included in state apportionment formulas?", options: ["Property", "Payroll", "Sales", "Employee count"], answer: "Employee count", points: 1500},
-    {question: "Which entities can elect to be taxed as a corporation?", options: ["Limited Partnership", "Limited Liability Partnership", "Limited Liability Company", "Trust"], answer: "Limited Liability Company", points: 1500},
-    {question: "Which lines in the K-1 are income lines?", options: ["1 through 5", "1 through 11", "1 through 13", "1 through 9"], answer: "1 through 11", points: 1000},
-    {question: "What’s the Form we use to report true-ups/true-downs?", options: ["Form 8082", "Form 8080", "Form 8004", "Form 8085"], answer: "Form 8082", points: 1000},
-    {question: "What is the primary tax characteristic of a partnership?", options: ["Taxed at the entity level", "Pass-through entity", "Subject to corporate tax rates", "Other"], answer: "Pass-through entity", points: 1000},
-    {question: "What information does Schedule D provide?", options: ["Short Term/Long term capital gain/losses", "Short Term/Long term capital gain/losses"], answer: "Short Term/Long term capital gain/losses", points: 1000},
-    {question: "What type of M-1 adjustment is tax exempt income?", options: ["Favorable", "Unfavorable", "Both Favorable and Unfavorable", "None of those"], answer: "Favorable", points: 1500},
-    {question: "Which forms should be issued to foreign partners allocated ECI?", options: ["Form 8805", "Form 1042", "Form 1065"], answer: "Form 8805", points: 1500},
-    {question: "Which is a permanent M-1 adjustment?", options: ["Depreciation", "Bad debt expense", "Tax-exempt interest income", "Accrued bonuses"], answer: "Tax-exempt interest income", points: 1000},
-    // {question: "Where can you get information for Schedule B-1?", options: ["FDR tab", "PDI for entity type"], answer: "FDR tab and PDI for entity type", points: 1000},
-    // {question: "Which form reports effectively connected income (ECI) for a partnership?", options: ["K-1", "1065", "8805", "1120"], answer: "K-1", points: 1500},
-    {question: "In which part of the K-1 are partner deductions reported?", options: ["Part II", "Part III", "Schedule A", "Section 199A"], answer: "Part III", points: 1500},
-    {question: "What is the general due date to file Form 1065?", options: ["January 31", "March 15", "April 15", "May 15"], answer: "March 15", points: 1500},
-    {question: "What is the main difference between ECI and FDAP?", options: ["ECI applies only to individuals, FDAP only to corporations","ECI is connected with a US trade or business, FDAP is not", "ECI is taxed at a flat rate, FDAP is progressive", "ECI is exempt income, FDAP is deductible"], answer: "ECI is connected with a US trade or business, FDAP is not", points: 3500},
-    {question: "Which form is filed to claim the Foreign Tax Credit?", options: [ "Form 2555", "Form 8621", "Form 1116","Form 8886"], answer: "Form 1116", points: 3500},
-    {question: "What information is detailed in Section L of the K-1?", options: ["Capital account analysis", "Income distribution summary", "Partner’s address", "Passthrough credits"], answer: "Capital account analysis", points: 3500},
-    {question: "What does the True-Up file represent?", options: ["The reconciliation between draft and final versions", "A preliminary estimate of tax", "The support file for estimates", "The annual federal summary"], answer: "The reconciliation between draft and final versions", points: 3500},
-    {question: "What is the main purpose of Form 8886?", options: ["To claim investment credits", "To report foreign source income","To disclose reportable transactions", "To request tax refunds"], answer: "To disclose reportable transactions", points: 3500},
-    {question: "What is the impact of a foreign partnership on the determination of ECI?", options: ["When losses exceed $2M", "It always generates FDAP automatically", "It may generate ECI if the activity is effectively connected to the US", "It has no impact on ECI", "It must only be reported on Form 5471"], answer: "It may generate ECI if the activity is effectively connected to the US", points: 5000},
-    {question: "In which cases must a K-3 be attached to a K-1?", options: ["When there are foreign income or credit items", "Only if there is more than one foreign partner", "When the entity is registered outside the US", ], answer: "When there are foreign income or credit items", points: 5000},
-    {question: "What review should be done before delivering the Federal Summary K-1?", options: [ "Review only Section L", "Verify the number of active partners", "Check estimated income amounts", "Validate that data matches the workbook and true-up file"], answer: "Validate that data matches the workbook and true-up file", points: 5000},
-    {question: "What does a reclassification in the Suite imply?", options: ["Adjusting the income type or entity based on new information", "Modifying the applied effective tax rate", "Changing the filing jurisdiction", "Duplicating prior year results"], answer: "Adjusting the income type or entity based on new information", points: 5000},
-    {question: "What is the main criterion to determine if income is subject to withholding?", options: ["The total accumulated gains", "The preparer’s residency", "The source of the income and the type of beneficiary", "The existence of operating losses"], answer: "The source of the income and the type of beneficiary", points: 5000}
+  "Entretenimiento": [
+    {question: "¿Qué personaje de videojuegos es famoso por recolectar anillos dorados?", options: ["A) Mario", "B) Sonic the Hedgehog", "C) Kirby", "D) Crash Bandicoot"], answer: "B) Sonic the Hedgehog", points: 1000},
+    {question: "En Stranger Things, ¿cómo se llama la dimensión paralela?", options: ["A) The Shadow Realm", "B) The Dark Zone", "C) The Upside Down", "D) The Other Side"], answer: "C) The Upside Down", points: 1000},
+    {question: "¿Qué famosa obra literaria argentina comienza con la frase: \"Aquí me pongo a cantar, al compás de la vigüela\"?", options: ["A) Facundo", "B) Rayuela", "C) Martín Fierro", "D) El Matadero"], answer: "C) Martín Fierro", points: 1000},
+    {question: "¿Quién dirigió Pulp Fiction?", options: ["A) Steven Spielberg", "B) Martin Scorsese", "C) Christopher Nolan", "D) Quentin Tarantino"], answer: "D) Quentin Tarantino", points: 1000},
+    {question: "¿Quién interpreta el papel principal en El secreto de sus ojos?", options: ["A) Guillermo Francella", "B) Diego Peretti", "C) Ricardo Darín", "D) Leonardo Sbaraglia"], answer: "C) Ricardo Darín", points: 1500},
+    {question: "¿Qué músico argentino fue miembro fundador de Sui Generis?", options: ["A) Gustavo Cerati", "B) Luis Alberto Spinetta", "C) Charly García", "D) Fito Páez"], answer: "C) Charly García", points: 1500},
+    {question: "¿Cuál de estos objetos NO fue utilizado como Horrocrux por Voldemort?", options: ["A) Diadema de Rowena Ravenclaw", "B) Guardapelo de Salazar Slytherin", "C) Copa de Helga Hufflepuff", "D) Espada de Godric Gryffindor"], answer: "D) Espada de Godric Gryffindor", points: 1500},
+    {question: "¿Qué actor interpretó al Joker en El caballero de la noche?", options: ["A) Joaquin Phoenix", "B) Jack Nicholson", "C) Jared Leto", "D) Heath Ledger"], answer: "D) Heath Ledger", points: 1500},
+    {question: "¿Cómo se llama el continente ficticio donde transcurre la mayor parte de Game of Thrones?", options: ["A) Narnia", "B) Westeros", "C) Tierra Media", "D) Pandora"], answer: "B) Westeros", points: 2500},
+    {question: "¿Qué legendaria banda argentina de rock grabó el álbum La grasa de las capitales?", options: ["A) Invisible", "B) Sui Generis", "C) Serú Girán", "D) Los Abuelos de la Nada"], answer: "C) Serú Girán", points: 2500},
+    {question: "¿Cuál de estas grandes sagas de videojuegos nunca recibió una tercera entrega principal numerada?", options: ["A) Half-Life", "B) Fallout", "C) The Witcher", "D) Dark Souls"], answer: "A) Half-Life", points: 2500},
+    {question: "¿Qué Pokémon evoluciona en Gyarados?", options: ["A) Goldeen", "B) Magikarp", "C) Feebas", "D) Horsea"], answer: "B) Magikarp", points: 2500},
+    {question: "¿En qué álbum de Soda Stereo aparece la canción De música ligera?", options: ["A) Signos", "B) Canción animal", "C) Doble vida", "D) Dynamo"], answer: "B) Canción animal", points: 3500},
+    {question: "¿Cómo se llama la cafetería que frecuentan los personajes de Friends?", options: ["A) Central Perk", "B) Cafe Central Park", "C) Cafe Manhattan", "D) Starbucks"], answer: "A) Central Perk", points: 3500},
+    {question: "¿Qué álbum de The Beatles fue el último que la banda grabó junta, aunque no fue el último publicado?", options: ["A) Let It Be", "B) Abbey Road", "C) The White Album", "D) Revolver"], answer: "B) Abbey Road", points: 3500},
+    {question: "¿Quién interrumpió el discurso de aceptación de Taylor Swift en los MTV Video Music Awards de 2009?", options: ["A) Jay-Z", "B) Kanye West", "C) Drake", "D) Eminem"], answer: "B) Kanye West", points: 5000},
+    {question: "¿Qué canción interpreta Marty McFly en el baile Enchantment Under the Sea?", options: ["A) Johnny B. Goode", "B) Tutti Frutti", "C) Rock Around the Clock", "D) Jailhouse Rock"], answer: "A) Johnny B. Goode", points: 5000},
+    {question: "¿Cuál de estos no forma parte del nombre completo de Albus Dumbledore?", options: ["A) Brian", "B) Aberforth", "C) Wulfric", "D) Percival"], answer: "B) Aberforth", points: 5000}
   ],
-  "Música": [
-    // 1k
-    {question: "¿Quién es el cantante principal de Coldplay?", options: ["Bono", "Adam Levine", "Chris Martin", "Bruno Mars"], answer: "Chris Martin", points: 1000},
-    {question: "¿Qué artista lanzó el álbum '30' en 2021?", options: ["Taylor Swift", "Adele", "Beyoncé", "Billie Eilish"], answer: "Adele", points: 1000},
-    {question: "¿Qué cantante lanzó el éxito 'As It Was' en 2022?", options: [ "Ed Sheeran", "Justin Bieber", "Harry Styles", "Shawn Mendes"], answer: "Harry Styles", points: 1000},
-
-    // 1.5k
-    {question: "¿Quién ganó el MTV Video Music Award al Video del Año en 2022?", options: ["Beyoncé", "Taylor Swift","Lil Nas X",  "Doja Cat"], answer: "Lil Nas X", points: 1500},
-    {question: "¿Qué grupo de K-pop es conocido por éxitos como 'Dynamite' y 'Butter'?", options: ["EXO", "BTS","BLACKPINK",  "TWICE"], answer: "BTS", points: 1500},
-    {question: "¿Qué artista es conocido como el 'Rey del Pop'?", options: ["Michael Jackson", "Prince", "Justin Timberlake", "Bruno Mars"], answer: "Michael Jackson", points: 1500},
-
-    // 2.5k
-    {question: "¿Qué cantante encabezó el espectáculo de medio tiempo del Super Bowl en 2023?", options: ["Shakira", "Rihanna", "Beyoncé", "Taylor Swift"], answer: "Rihanna", points: 2500},
-    {question: "¿Qué banda lanzó el álbum 'Music of the Spheres'?", options: ["Imagine Dragons", "Maroon 5", "OneRepublic", "Coldplay"], answer: "Coldplay", points: 2500},
-    {question: "¿Quién ganó el Grammy al Álbum del Año en 2023?", options: ["Beyoncé", "Harry Styles", "Taylor Swift", "Bruno Mars"], answer: "Harry Styles", points: 2500},
-
-    // 3.5k
-    {question: "¿Qué artista es conocido por la canción 'Levitating'?", options: ["Ariana Grande", "Lady Gaga", "Dua Lipa", "Billie Eilish"], answer: "Dua Lipa", points: 3500},
-    {question: "¿Qué artista lanzó el álbum 'Midnights' en 2022?", options: ["Adele", "Olivia Rodrigo", "Taylor Swift", "Billie Eilish"], answer: "Taylor Swift", points: 3500},
-    {question: "¿Quién es el cantante principal de Imagine Dragons?", options: [ "Adam Levine", "Dan Reynolds", "Brandon Flowers", "Chris Martin"], answer: "Dan Reynolds", points: 3500},
-
-    // 5k
-    {question: "¿Qué rapero lanzó 'Mr. Morale & The Big Steppers' en 2022?", options: [ "Drake", "J. Cole", "Travis Scott", "Kendrick Lamar"], answer: "Kendrick Lamar", points: 5000},
-    {question: "¿Qué artista ganó Billboard Artista del Año 2022?", options: [ "Taylor Swift", "Drake", "Bad Bunny", "Beyoncé"], answer: "Bad Bunny", points: 5000},
-    {question: "¿Qué cantante es conocida por la canción 'Flowers' lanzada en 2023?", options: [ "Dua Lipa", "Miley Cyrus", "Selena Gomez", "Adele"], answer: "Miley Cyrus", points: 5000}
+  "Geografía y Mundo": [
+    {question: "¿Qué desierto cubre gran parte del norte de Chile?", options: ["A) Desierto de Sonora", "B) Desierto de Atacama", "C) Desierto de Mojave", "D) Desierto del Namib"], answer: "B) Desierto de Atacama", points: 1000},
+    {question: "¿Cuál es la capital de Australia?", options: ["A) Sídney", "B) Melbourne", "C) Camberra", "D) Brisbane"], answer: "C) Camberra", points: 1000},
+    {question: "¿Qué país comparte la frontera internacional más extensa con Argentina?", options: ["A) Brasil", "B) Uruguay", "C) Chile", "D) Bolivia"], answer: "C) Chile", points: 1000},
+    {question: "¿Cuál es la capital de Brasil?", options: ["A) Río de Janeiro", "B) São Paulo", "C) Salvador", "D) Brasilia"], answer: "D) Brasilia", points: 1000},
+    {question: "¿Cuál es la capital de Japón?", options: ["A) Kioto", "B) Osaka", "C) Tokio", "D) Hiroshima"], answer: "C) Tokio", points: 1500},
+    {question: "¿Qué río atraviesa la ciudad de Londres?", options: ["A) Sena", "B) Thames", "C) Danubio", "D) Rin"], answer: "B) Thames", points: 1500},
+    {question: "¿Qué estrecho separa Europa de África?", options: ["A) Estrecho de Ormuz", "B) Estrecho de Gibraltar", "C) Estrecho del Bósforo", "D) Estrecho de Bering"], answer: "B) Estrecho de Gibraltar", points: 1500},
+    {question: "¿El lago Titicaca se encuentra en la frontera entre qué dos países?", options: ["A) Perú y Bolivia", "B) Bolivia y Chile", "C) Perú y Ecuador", "D) Chile y Argentina"], answer: "A) Perú y Bolivia", points: 1500},
+    {question: "¿Qué país africano está completamente rodeado por Sudáfrica?", options: ["A) Eswatini", "B) Botswana", "C) Lesotho", "D) Namibia"], answer: "C) Lesotho", points: 2500},
+    {question: "¿Cuál es la capital de Canadá?", options: ["A) Toronto", "B) Vancouver", "C) Montréal", "D) Ottawa"], answer: "D) Ottawa", points: 2500},
+    {question: "¿En qué país se encuentra la antigua ciudad de Petra?", options: ["A) Egipto", "B) Jordania", "C) Siria", "D) Turquía"], answer: "B) Jordania", points: 2500},
+    {question: "¿Qué provincia argentina es la única que limita tanto con Chile como con Paraguay?", options: ["A) Jujuy", "B) Salta", "C) Formosa", "D) Catamarca"], answer: "B) Salta", points: 2500},
+    {question: "¿Qué territorio argentino fue el último en convertirse en provincia?", options: ["A) Chubut", "B) Santa Cruz", "C) Tierra del Fuego", "D) Jujuy"], answer: "C) Tierra del Fuego", points: 3500},
+    {question: "¿Qué territorio de EE. UU. fue el último en convertirse en estado?", options: ["A) Alaska", "B) Puerto Rico", "C) Hawái", "D) New Mexico"], answer: "C) Hawái", points: 3500},
+    {question: "¿Cuál es el país más pequeño del mundo por superficie terrestre?", options: ["A) Mónaco", "B) Malta", "C) San Marino", "D) Ciudad del Vaticano"], answer: "D) Ciudad del Vaticano", points: 3500},
+    {question: "¿Cuál es la capital de Curazao?", options: ["A) Willemstad", "B) Oranjestad", "C) Nasáu", "D) Roseau"], answer: "A) Willemstad", points: 5000},
+    {question: "¿Qué provincia argentina limita con la mayor cantidad de otras provincias argentinas?", options: ["A) Córdoba", "B) Buenos Aires", "C) Santiago del Estero", "D) Santa Fe"], answer: "A) Córdoba", points: 5000},
+    {question: "¿Qué país sudamericano tiene costas tanto sobre el océano Pacífico como sobre el mar Caribe, parte del Atlántico?", options: ["A) Chile", "B) Ecuador", "C) Colombia", "D) Venezuela"], answer: "C) Colombia", points: 5000}
   ],
-
-  "Cine y Series": [
-    // 1k
-    {question: "¿Qué película ganó el Oscar a Mejor Película en 2022?", options: ["CODA", "Dune", "Belfast", "West Side Story"], answer: "CODA", points: 1000},
-    {question: "¿Quién interpreta a Eleven en la serie 'Stranger Things'?", options: [ "Sadie Sink", "Natalia Dyer", "Millie Bobby Brown", "Maya Hawke"], answer: "Millie Bobby Brown", points: 1000},
-    {question: "¿Qué director es conocido por la trilogía 'The Dark Knight'?", options: [ "Steven Spielberg", "Christopher Nolan", "James Cameron", "Quentin Tarantino"], answer: "Christopher Nolan", points: 1000},
-
-    // 1.5k
-    {question: "En 'Game of Thrones', ¿quién se sienta en el Trono de Hierro al final?", options: ["Daenerys Targaryen", "Bran Stark", "Jon Snow", "Sansa Stark"], answer: "Bran Stark", points: 1500},
-    {question: "¿Qué película incluye la canción 'Let It Go'?", options: ["Moana", "Enredados", "Coco", "Frozen"], answer: "Frozen", points: 1500},
-    {question: "¿Quién dirigió la película 'Avatar: The Way of Water'?", options: [ "Peter Jackson", "Ridley Scott", "Steven Spielberg", "James Cameron",], answer: "James Cameron", points: 1500},
-
-    // 2.5k
-    {question: "¿Qué actor interpreta a Doctor Strange en el Universo Cinematográfico de Marvel?", options: [ "Robert Downey Jr.","Benedict Cumberbatch", "Chris Hemsworth", "Tom Holland"], answer: "Benedict Cumberbatch", points: 2500},
-    {question: "¿Qué serie tiene a los personajes Eleven, Mike, Dustin y Lucas?", options: [ "The Umbrella Academy", "The Witcher","Stranger Things","Locke & Key"], answer: "Stranger Things", points: 2500},
-    {question: "¿Qué película ganó la Palma de Oro en Cannes 2023?", options: ["Anatomy of a Fall", "Oppenheimer", "The Fabelmans", "Past Lives"], answer: "Anatomy of a Fall", points: 2500},
-
-    // 3.5k
-    {question: "¿Qué actriz interpreta a la Princesa Leia en Star Wars?", options: [ "Natalie Portman", "Daisy Ridley", "Felicity Jones", "Carrie Fisher",], answer: "Carrie Fisher", points: 3500},
-    {question: "¿En qué año se estrenó la primera película de Harry Potter?", options: [ "1999","2000", "2001", "2002"], answer: "2001", points: 3500},
-    {question: "¿Quién dirigió 'Everything Everywhere All At Once'?", options: [ "Wes Anderson", "Spike Lee", "Dan Kwan y Daniel Scheinert", "Greta Gerwig"], answer: "Dan Kwan y Daniel Scheinert", points: 3500},
-
-    // 5k
-    {question: "¿Qué actor ha interpretado más personajes de Marvel en películas live-action?", options: ["Chris Evans", "Robert Downey Jr.", "Chris Hemsworth", "Tom Holland"], answer: "Chris Evans", points: 5000},
-    {question: "¿Qué franquicia cinematográfica tiene a un personaje llamado Dominic Toretto?", options: ["Rápidos y Furiosos", "Misión Imposible", "James Bond", "The Transporter"], answer: "Rápidos y Furiosos", points: 5000},
-    {question: "¿Qué película animada ganó el Oscar a Mejor Película Animada en 2023?", options: ["Puss in Boots: The Last Wish", "Mundos Extraños", "Pinocho de Guillermo del Toro",  "Minions: El Ascenso de Gru"], answer: "Pinocho de Guillermo del Toro", points: 5000}
+  "Historia": [
+    {question: "¿En qué ciudad tuvo lugar principalmente la Revolución de Mayo argentina de 1810?", options: ["A) Córdoba", "B) Tucumán", "C) Mendoza", "D) Buenos Aires"], answer: "D) Buenos Aires", points: 1000},
+    {question: "¿En qué año terminó la Segunda Guerra Mundial?", options: ["A) 1943", "B) 1944", "C) 1945", "D) 1946"], answer: "C) 1945", points: 1000},
+    {question: "¿Quién fue la primera persona en ocupar formalmente el cargo de presidente de las Provincias Unidas del Río de la Plata?", options: ["A) Domingo F. Sarmiento", "B) Bernardino Rivadavia", "C) Manuel Belgrano", "D) Nicolás Avellaneda"], answer: "B) Bernardino Rivadavia", points: 1000},
+    {question: "¿Qué civilización construyó Machu Picchu?", options: ["A) Maya", "B) Inca", "C) Azteca", "D) Romana"], answer: "B) Inca", points: 1000},
+    {question: "¿Quién fue el primer presidente de Estados Unidos?", options: ["A) Thomas Jefferson", "B) George Washington", "C) Abraham Lincoln", "D) John Adams"], answer: "B) George Washington", points: 1500},
+    {question: "¿En qué país comenzó el Renacimiento?", options: ["A) Francia", "B) Inglaterra", "C) Italia", "D) España"], answer: "C) Italia", points: 1500},
+    {question: "¿En qué batalla sufrió Napoleón su derrota final?", options: ["A) Austerlitz", "B) Leipzig", "C) Trafalgar", "D) Waterloo"], answer: "D) Waterloo", points: 1500},
+    {question: "¿Qué ciudad antigua fue destruida por la erupción del Vesubio en el año 79 d. C.?", options: ["A) Cartago", "B) Pompeya", "C) Esparta", "D) Troya"], answer: "B) Pompeya", points: 1500},
+    {question: "¿Qué presidente argentino escribió Facundo?", options: ["A) Julio A. Roca", "B) Domingo F. Sarmiento", "C) Bartolomé Mitre", "D) Nicolás Avellaneda"], answer: "B) Domingo F. Sarmiento", points: 2500},
+    {question: "¿En qué año fue inaugurada la Avenida de Mayo?", options: ["A) 1901", "B) 1880", "C) 1894", "D) 1927"], answer: "C) 1894", points: 2500},
+    {question: "¿Cuántas provincias tiene Argentina?", options: ["A) 22 provincias", "B) 23 provincias", "C) 24 provincias", "D) 25 provincias"], answer: "B) 23 provincias", points: 2500},
+    {question: "¿Qué conflicto fue desencadenado por el asesinato del archiduque Francisco Fernando?", options: ["A) Primera Guerra Mundial", "B) Guerra franco-prusiana", "C) Guerra de Crimea", "D) Primera Guerra de los Balcanes"], answer: "A) Primera Guerra Mundial", points: 2500},
+    {question: "¿En qué año comenzó la Revolución Francesa?", options: ["A) 1492", "B) 1776", "C) 1789", "D) 1815"], answer: "C) 1789", points: 3500},
+    {question: "¿Quién escribió Martín Fierro?", options: ["A) Domingo F. Sarmiento", "B) Juan Bautista Alberti", "C) José Hernández", "D) Miguel de Cervantes"], answer: "C) José Hernández", points: 3500},
+    {question: "¿En qué país recibió José de San Martín su formación militar?", options: ["A) Francia", "B) España", "C) Argentina", "D) Portugal"], answer: "B) España", points: 3500},
+    {question: "¿Durante la Batalla de Vuelta de Obligado de 1845, Argentina enfrentó a las fuerzas navales de qué dos potencias europeas?", options: ["A) España y Portugal", "B) Francia y Gran Bretaña", "C) Gran Bretaña y España", "D) Francia y Portugal"], answer: "B) Francia y Gran Bretaña", points: 5000},
+    {question: "¿Qué compañía privada operaba con ejército propio, acuñaba moneda y llegó a administrar gran parte del subcontinente indio?", options: ["A) Compañía Británica de las Indias Orientales", "B) Compañía de la Bahía de Hudson", "C) Compañía Neerlandesa de las Indias Orientales", "D) Compañía de los Mares del Sur"], answer: "A) Compañía Británica de las Indias Orientales", points: 5000},
+    {question: "¿Quién recibió la primera patente formal estadounidense del teléfono en 1876?", options: ["A) Antonio Meucci", "B) Alexander Graham Bell", "C) Elisha Gray", "D) Thomas Edison"], answer: "B) Alexander Graham Bell", points: 5000}
   ],
-
-  "Cultura Pop": [
-    // 1k
-    {question: "¿Qué red social es conocida por videos cortos y tendencias?", options: ["Instagram", "Snapchat", "TikTok", "Twitter"], answer: "TikTok", points: 1000},
-    {question: "¿Qué serie popular tiene a Ted, Barney y Robin?", options: ["Friends", "The Big Bang Theory", "How I met your mother", "Modern Family"], answer: "How I met your mother", points: 1000},
-    {question: "¿Cuál de estos personajes NO pertenece a DC", options: [ "Batman", "Wonder Woman", "Black Widow", "Flash"], answer: "Black Widow", points: 1000},
-
-    // 1.5k
-    {question: "¿Qué cantante es conocida como la 'Reina del Pop'?", options: ["Beyoncé", "Madonna",  "Lady Gaga", "Britney Spears"], answer: "Madonna", points: 1500},
-    {question: "¿Quién es la fundadora del Met Gala?", options: ["Vogue", "Rihanna", "Anna Wintour", "Karl Lagerfeld"], answer: "Anna Wintour", points: 1500},
-    {question: "¿Qué actor interpreta a Deadpool en las películas?", options: ["Ryan Reynolds", "Hugh Jackman", "Chris Pratt", "Tom Hardy"], answer: "Ryan Reynolds", points: 1500},
-
-    // 2.5k
-    {question: "¿Qué marca de moda es conocida por su logo con dos G entrelazadas?", options: ["Chanel", "Prada", "Gucci", "Louis Vuitton"], answer: "Gucci", points: 2500},
-    {question: "¿Qué artista pintó 'Girl with Balloon'?", options: ["Van Gogh", "Picasso", "Banksy", "Andy Warhol"], answer: "Banksy", points: 2500},
-    {question: "¿Qué serie de Netflix presenta el Upside Down?", options: ["Stranger Things", "The Witcher", "Locke & Key", "The Umbrella Academy"], answer: "Stranger Things", points: 2500},
-
-    // 3.5k
-    {question: "¿Qué reality show es famoso por la frase 'You’re fired'?", options: ["Survivor", "The Apprentice", "Big Brother", "MasterChef"], answer: "The Apprentice", points: 3500},
-    {question: "¿En qué año se estrenó la primera película de 'Jurassic Park'?", options: [ "1985", "1990", "1993", "1999"], answer: "1993", points: 3500},
-    {question: "¿Qué actor interpreta al Joker en la película de 2019?", options: [ "Heath Ledger", "Jared Leto", "Jack Nicholson", "Joaquin Phoenix"], answer: "Joaquin Phoenix", points: 3500},
-
-    // 5k
-    {question: "¿Cómo se llama la nave piloteada por Han Solo?", options: ["X-Wing", "Millenial Falcon", "Y-Wing", "Tie Fighter"], answer: "Millenial Falcon", points: 5000},
-    {question: "¿Quién es el creador de la seri 'Dragon Ball'?", options: [ "Eiichiro Oda", "Akira Toriyama","Masashi Kishimoto", "Takehiko Inoue"], answer: "Bad Bunny", points: 5000},
-    {question: "¿Quién es el creador de la serie de cómics 'The Walking dead'?", options: ["Stan Lee", "Robert Kirkman", "Neil Gaiman", "Frank Miller"], answer: "Robert Kirkman", points: 5000}
-  ],
-
   "Deportes": [
-    // 1k
-    {question: "¿Quién es el atleta más rápido en la historia de los 100mts llanos?", options: ["Carl Lewis", "Jesse Owens", "Usain Bolt", "Asafa Powell"], answer: "Usain Bolt", points: 1000},
-    {question: "¿Qué país ganó la Copa Mundial FIFA 2022?", options: ["Argentina", "Francia", "Brasil", "Alemania"], answer: "Argentina", points: 1000},
-    {question: "¿Quién es conocido como 'La Pulga' en el fútbol?", options: ["Lionel Messi", "Cristiano Ronaldo", "Neymar", "Kylian Mbappé"], answer: "Lionel Messi", points: 1000},
-
-    // 1.5k
-    {question: "¿Qué tenista ha ganado más títulos de Grand Slam?", options: ["Rafael Nadal", "Roger Federer", "Novak Djokovic", "Serena Williams"], answer: "Novak Djokovic", points: 1500},
-    {question: "¿Qué jugador de baloncesto es conocido como 'King James'?", options: ["LeBron James", "Michael Jordan", "Kobe Bryant", "Stephen Curry James"], answer: "LeBron James", points: 1500},
-    {question: "¿Qué país organizó los Juegos Olímpicos de 2016?", options: ["Brasil", "China", "Reino Unido", "Rusia"], answer: "Brasil", points: 1500},
-
-    // 2.5k
-    {question: "¿Qué equipo ha ganado más títulos de la UEFA Champions League?", options: ["Real Madrid", "Barcelona", "AC Milan", "Liverpool"], answer: "Real Madrid", points: 2500},
-    {question: "¿Qué equipo de la NFL tiene más victorias en Super Bowl?", options: ["Pittsburgh Steelers", "New England Patriots", "Dallas Cowboys", "San Francisco 49ers"], answer: "Pittsburgh Steelers", points: 2500},
-    {question: "¿Quién tiene el récord de más goles en la historia de la Copa del Mundo?", options: ["Marta", "Miroslav Klose", "Ronaldo Nazário", "Pelé"], answer: "Miroslav Klose", points: 2500},
-
-    // 3.5k
-    {question: "¿Qué piloto de Fórmula 1 ha ganado 7 campeonatos mundiales?", options: ["Lewis Hamilton", "Michael Schumacher", "Sebastian Vettel", "Ayrton Senna"], answer: "Lewis Hamilton", points: 3500},
-    {question: "¿En qué deporte se disputa la Ryder Cup?", options: ["Golf", "Tenis", "Cricket", "Fútbol"], answer: "Golf", points: 3500},
-    {question: "¿Qué país ganó la primera Copa Mundial Femenina de Fútbol?", options: ["Estados Unidos", "Noruega", "Alemania", "China"], answer: "Estados Unidos", points: 3500},
-
-    // 5k
-    {question: "¿Qué boxeador era conocido como 'The Greatest' y 'The People's Champion'?", options: ["Muhammad Ali", "Mike Tyson", "Floyd Mayweather", "Manny Pacquiao"], answer: "Muhammad Ali", points: 5000},
-    {question: "¿Qué país ha ganado más medallas de oro olímpicas en la historia?", options: ["Estados Unidos", "Rusia", "China", "Alemania"], answer: "Estados Unidos", points: 5000},
-    {question: "¿Cuál es el equipo de baloncesto más exitoso de la NBA?", options: ["Los Angeles Lakers", "Boston Celtics", "Chicago Bulls", "Golden State Warriors"], answer: "Boston Celtics", points: 5000}
+    {question: "¿Qué profesión ejerció Carlos Salvador Bilardo además de ser entrenador de fútbol?", options: ["A) Profesor de Educación Física", "B) Abogado", "C) Contador", "D) Médico"], answer: "D) Médico", points: 1000},
+    {question: "¿Qué equipo ganó más títulos de la UEFA Champions League?", options: ["A) Real Madrid", "B) Barcelona", "C) Bayern Múnich", "D) Manchester United"], answer: "A) Real Madrid", points: 1000},
+    {question: "En Fórmula 1, ¿qué color de bandera indica que la carrera debe detenerse?", options: ["A) Amarilla", "B) Roja", "C) Azul", "D) Verde"], answer: "B) Roja", points: 1000},
+    {question: "¿Sobre qué superficie se juega tradicionalmente Wimbledon?", options: ["A) Polvo de ladrillo", "B) Cancha dura", "C) Césped", "D) Moqueta"], answer: "C) Césped", points: 1000},
+    {question: "¿Quién fue el jugador más joven en finalizar como máximo goleador de un torneo de Primera División argentina?", options: ["A) Franco Mastantuono", "B) Kun Agüero", "C) Diego Armando Maradona", "D) Miguel \"La Bestia\" Merentiel"], answer: "C) Diego Armando Maradona", points: 1500},
+    {question: "¿Qué atleta posee el récord de más medallas olímpicas?", options: ["A) Usain Bolt", "B) Larisa Latynina", "C) Michael Phelps", "D) Carl Lewis"], answer: "C) Michael Phelps", points: 1500},
+    {question: "¿Qué tenista argentino ganó el US Open de 2009?", options: ["A) Diego Schwartzman", "B) Juan Martín del Potro", "C) David Nalbandian", "D) Guillermo Coria"], answer: "B) Juan Martín del Potro", points: 1500},
+    {question: "¿A qué país derrotó Argentina en la final de básquet de los Juegos Olímpicos de Atenas 2004?", options: ["A) Estados Unidos", "B) Serbia", "C) Italia", "D) España"], answer: "C) Italia", points: 1500},
+    {question: "¿A qué país derrotó Argentina en la final para ganar el Mundial femenino de hockey FIH 2026?", options: ["A) Bélgica", "B) Alemania", "C) Países Bajos", "D) Australia"], answer: "C) Países Bajos", points: 2500},
+    {question: "¿Qué franquicia de la NBA ganó más campeonatos?", options: ["A) Los Angeles Lakers", "B) Chicago Bulls", "C) Boston Celtics", "D) Golden State Warriors"], answer: "C) Boston Celtics", points: 2500},
+    {question: "¿Qué club posee el récord de más títulos de Copa Libertadores?", options: ["A) Boca Juniors", "B) River Plate", "C) Independiente", "D) Peñarol"], answer: "C) Independiente", points: 2500},
+    {question: "¿Quién marcó más goles en una sola edición de la Copa Mundial de la FIFA?", options: ["A) Gerd Müller", "B) Just Fontaine", "C) Kylian Mbappé", "D) Ronaldo Nazário"], answer: "B) Just Fontaine", points: 2500},
+    {question: "¿Quién posee el récord de más títulos individuales masculinos en la historia de Wimbledon?", options: ["A) Roger Federer", "B) Novak Djokovic", "C) Pete Sampras", "D) Björn Borg"], answer: "A) Roger Federer", points: 3500},
+    {question: "¿Qué arquero posee el récord de más goles en su carrera?", options: ["A) José Luis Chilavert", "B) René Higuita", "C) Rogério Ceni", "D) Jorge Campos"], answer: "C) Rogério Ceni", points: 3500},
+    {question: "¿Qué tenista británica ganó el US Open 2021 y se convirtió en la primera campeona británica de singles de Grand Slam desde Virginia Wade en 1977?", options: ["A) Johanna Konta", "B) Emma Raducanu", "C) Heather Watson", "D) Laura Robson"], answer: "B) Emma Raducanu", points: 3500},
+    {question: "¿Quién es el máximo anotador de puntos en la historia de Los Pumas?", options: ["A) Juan Martín Hernández", "B) Agustín Pichot", "C) Felipe Contepomi", "D) Nicolás Sánchez"], answer: "D) Nicolás Sánchez", points: 5000},
+    {question: "¿Cuántos pilotos argentinos ganaron el Campeonato Mundial de Pilotos de Fórmula 1?", options: ["A) 1", "B) 2", "C) 3", "D) 5"], answer: "A) 1", points: 5000},
+    {question: "¿Quién ganó más torneos Major en la historia del golf?", options: ["A) Tiger Woods", "B) Jack Nicklaus", "C) Phil Mickelson", "D) Ángel Cabrera"], answer: "B) Jack Nicklaus", points: 5000}
+  ],
+  "Tax Technical": [
+    {question: "Which IRS form is generally used by a partnership to file its annual U.S. federal income tax return?", options: ["A) Form 1040", "B) Form 1065", "C) Form 1120", "D) Form 1041"], answer: "B) Form 1065", points: 1000},
+    {question: "For a calendar-year partnership, what is the original federal filing deadline for Form 1065 if no extension is requested?", options: ["A) March 15", "B) April 15", "C) September 15", "D) October 15"], answer: "A) March 15", points: 1000},
+    {question: "In which box of Schedule K-1 are charitable contributions and other deductions reported?", options: ["A) Box 5", "B) Box 13", "C) Box 4", "D) Box 19"], answer: "B) Box 13", points: 1000},
+    {question: "Which schedule reports a partner's share of a partnership's income, deductions, credits, and other items?", options: ["A) Schedule A", "B) Schedule C", "C) Schedule K-1", "D) Schedule D"], answer: "C) Schedule K-1", points: 1000},
+    {question: "In which box of Schedule K-1 (Form 1065) is a partner's share of net rental real estate income or loss generally reported?", options: ["A) Box 7", "B) Box 2", "C) Box 5", "D) Box 11"], answer: "B) Box 2", points: 1500},
+    {question: "Which of the following is NOT a financial statement included in a typical set of partnership financial statements?", options: ["A) Balance Sheet", "B) Statement of Operations", "C) Statement of Changes in Partners' Capital", "D) Bank Reconciliation"], answer: "D) Bank Reconciliation", points: 1500},
+    {question: "Which IRS form is generally used to report sales and other dispositions of capital assets before they are summarized on Schedule D?", options: ["A) Form 8949", "B) Form 4562", "C) Form 4797", "D) Form 941"], answer: "A) Form 8949", points: 1500},
+    {question: "When must a partnership furnish Schedule K-3 to a partner if the partnership is otherwise eligible for a filing exception?", options: ["A) When the partner needs relevant international tax information and no filing exception applies", "B) Whenever the partnership has more than 10 partners", "C) Only when the partnership reports a net tax loss", "D) Only when the partner is a domestic corporation"], answer: "A) When the partner needs relevant international tax information and no filing exception applies", points: 1500},
+    {question: "For a loss transaction, what single-year Section 165 loss threshold generally requires Form 8886 for a partnership that does not have only C corporation partners?", options: ["A) $500,000", "B) $1 million", "C) $2 million", "D) $10 million"], answer: "C) $2 million", points: 2500},
+    {question: "Where are a partner's beginning and ending capital account balances generally shown on Schedule K-1?", options: ["A) Part II, Item L", "B) Part I", "C) Part II, Item J", "D) Part III"], answer: "A) Part II, Item L", points: 2500},
+    {question: "Which investors are generally most directly affected by ECI exposure?", options: ["A) U.S. taxable investors, U.S. tax-exempt investors, non-U.S. investors/entities, and foreign governments", "B) Non-U.S. investors/entities and foreign governments", "C) U.S. taxable and U.S. tax-exempt investors", "D) U.S. taxable, U.S. tax-exempt, and non-U.S. investors/entities"], answer: "B) Non-U.S. investors/entities and foreign governments", points: 2500},
+    {question: "Which type of investor should generally be most concerned about receiving UBTI from a partnership?", options: ["A) Individual taxable investor", "B) C corporation", "C) Tax-exempt investor", "D) Foreign individual"], answer: "C) Tax-exempt investor", points: 2500},
+    {question: "What is the total period covered by the U.S. wash-sale rule when purchases before and after a sale at a loss are considered?", options: ["A) 30 days", "B) 31 days", "C) 60 days", "D) 61 days"], answer: "D) 61 days", points: 3500},
+    {question: "For Corporate Alternative Minimum Tax purposes, what is the principal starting measure used to compute the tax?", options: ["A) Adjusted Financial Statement Income (AFSI)", "B) Federal taxable income before net operating losses", "C) Earnings and profits", "D) Gross receipts reported on Form 1120"], answer: "A) Adjusted Financial Statement Income (AFSI)", points: 3500},
+    {question: "When can a foreign partner be allocated ECI through a partnership?", options: ["A) Only when losses exceed $2 million", "B) It always generates FDAP automatically", "C) It may generate ECI if the activity is effectively connected with a U.S. trade or business", "D) It has no impact on ECI"], answer: "C) It may generate ECI if the activity is effectively connected with a U.S. trade or business", points: 3500},
+    {question: "What is the main criterion for determining whether income paid to a foreign person is subject to U.S. withholding?", options: ["A) The taxpayer's total accumulated gains", "B) The tax preparer's residency", "C) The existence of operating losses", "D) The source and character of the income and the type and status of the beneficial owner"], answer: "D) The source and character of the income and the type and status of the beneficial owner", points: 5000},
+    {question: "What is the main purpose of Form 8886?", options: ["A) To claim investment credits", "B) To report foreign-source income", "C) To disclose participation in reportable transactions", "D) To request tax refunds"], answer: "C) To disclose participation in reportable transactions", points: 5000},
+    {question: "Under the TY2025 Schedule K-1 reporting rules, which Box 19 code is used to report a cash distribution to a partner for providing services to the partnership?", options: ["A) Box 19, Code D", "B) Box 19, Code F", "C) Box 19, Code G", "D) Box 4a"], answer: "B) Box 19, Code F", points: 5000}
   ]
 };
-
-
-
 
