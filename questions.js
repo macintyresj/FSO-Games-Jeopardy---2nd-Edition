@@ -1,5 +1,5 @@
 const questions = {
-  "Acrónimos": [
+  "ACRONIMOS": [
     {question: "¿Qué significan las siglas IRS?", options: ["A) Internal Revenue Service", "B) International Revenue System", "C) Internal Reporting Service", "D) Income Revenue Service"], answer: "A) Internal Revenue Service", points: 1000},
     {question: "¿Qué significan las siglas GTP?", options: ["A) Global Tax Process", "B) General Tax Program", "C) Global Tax Platform", "D) Global Transfer Pricing"], answer: "C) Global Tax Platform", points: 1000},
     {question: "¿Qué significan las siglas SSN?", options: ["A) Social Security Number", "B) Standard Security Number", "C) Social Services Number", "D) Secure System Number"], answer: "A) Social Security Number", points: 1000},
@@ -19,7 +19,7 @@ const questions = {
     {question: "¿En GTP, qué significan las siglas CAM?", options: ["A) Chart of Accounts Module", "B) Capital Accounting Management", "C) Corporate Audit Module", "D) Cash Allocation Module"], answer: "A) Chart of Accounts Module", points: 5000},
     {question: "¿Qué significan las siglas TARAS?", options: ["A) Tax Accounting and Risk Advisory Services", "B) Tax Accounting and Revenue Audit Service", "C) Transaction Accounting Risk Assessment Service", "D) Trust and Accounting Regulatory Advisory System"], answer: "A) Tax Accounting and Risk Advisory Services", points: 5000}
   ],
-  "Entretenimiento": [
+  "ENTRETENIMIENTO": [
     {question: "¿Qué personaje de videojuegos es famoso por recolectar anillos dorados?", options: ["A) Mario", "B) Sonic the Hedgehog", "C) Kirby", "D) Crash Bandicoot"], answer: "B) Sonic the Hedgehog", points: 1000},
     {question: "En Stranger Things, ¿cómo se llama la dimensión paralela?", options: ["A) The Shadow Realm", "B) The Dark Zone", "C) The Upside Down", "D) The Other Side"], answer: "C) The Upside Down", points: 1000},
     {question: "¿Qué famosa obra literaria argentina comienza con la frase: \"Aquí me pongo a cantar, al compás de la vigüela\"?", options: ["A) Facundo", "B) Rayuela", "C) Martín Fierro", "D) El Matadero"], answer: "C) Martín Fierro", points: 1000},
@@ -39,7 +39,7 @@ const questions = {
     {question: "¿Qué canción interpreta Marty McFly en el baile Enchantment Under the Sea?", options: ["A) Johnny B. Goode", "B) Tutti Frutti", "C) Rock Around the Clock", "D) Jailhouse Rock"], answer: "A) Johnny B. Goode", points: 5000},
     {question: "¿Cuál de estos no forma parte del nombre completo de Albus Dumbledore?", options: ["A) Brian", "B) Aberforth", "C) Wulfric", "D) Percival"], answer: "B) Aberforth", points: 5000}
   ],
-  "Geografía y Mundo": [
+  "GEOGRAFIA Y MUNDO": [
     {question: "¿Qué desierto cubre gran parte del norte de Chile?", options: ["A) Desierto de Sonora", "B) Desierto de Atacama", "C) Desierto de Mojave", "D) Desierto del Namib"], answer: "B) Desierto de Atacama", points: 1000},
     {question: "¿Cuál es la capital de Australia?", options: ["A) Sídney", "B) Melbourne", "C) Camberra", "D) Brisbane"], answer: "C) Camberra", points: 1000},
     {question: "¿Qué país comparte la frontera internacional más extensa con Argentina?", options: ["A) Brasil", "B) Uruguay", "C) Chile", "D) Bolivia"], answer: "C) Chile", points: 1000},
@@ -59,7 +59,7 @@ const questions = {
     {question: "¿Qué provincia argentina limita con la mayor cantidad de otras provincias argentinas?", options: ["A) Córdoba", "B) Buenos Aires", "C) Santiago del Estero", "D) Santa Fe"], answer: "A) Córdoba", points: 5000},
     {question: "¿Qué país sudamericano tiene costas tanto sobre el océano Pacífico como sobre el mar Caribe, parte del Atlántico?", options: ["A) Chile", "B) Ecuador", "C) Colombia", "D) Venezuela"], answer: "C) Colombia", points: 5000}
   ],
-  "Historia": [
+  "HISTORIA": [
     {question: "¿En qué ciudad tuvo lugar principalmente la Revolución de Mayo argentina de 1810?", options: ["A) Córdoba", "B) Tucumán", "C) Mendoza", "D) Buenos Aires"], answer: "D) Buenos Aires", points: 1000},
     {question: "¿En qué año terminó la Segunda Guerra Mundial?", options: ["A) 1943", "B) 1944", "C) 1945", "D) 1946"], answer: "C) 1945", points: 1000},
     {question: "¿Quién fue la primera persona en ocupar formalmente el cargo de presidente de las Provincias Unidas del Río de la Plata?", options: ["A) Domingo F. Sarmiento", "B) Bernardino Rivadavia", "C) Manuel Belgrano", "D) Nicolás Avellaneda"], answer: "B) Bernardino Rivadavia", points: 1000},
@@ -79,7 +79,7 @@ const questions = {
     {question: "¿Qué compañía privada operaba con ejército propio, acuñaba moneda y llegó a administrar gran parte del subcontinente indio?", options: ["A) Compañía Británica de las Indias Orientales", "B) Compañía de la Bahía de Hudson", "C) Compañía Neerlandesa de las Indias Orientales", "D) Compañía de los Mares del Sur"], answer: "A) Compañía Británica de las Indias Orientales", points: 5000},
     {question: "¿Quién recibió la primera patente formal estadounidense del teléfono en 1876?", options: ["A) Antonio Meucci", "B) Alexander Graham Bell", "C) Elisha Gray", "D) Thomas Edison"], answer: "B) Alexander Graham Bell", points: 5000}
   ],
-  "Deportes": [
+  "DEPORTES": [
     {question: "¿Qué profesión ejerció Carlos Salvador Bilardo además de ser entrenador de fútbol?", options: ["A) Profesor de Educación Física", "B) Abogado", "C) Contador", "D) Médico"], answer: "D) Médico", points: 1000},
     {question: "¿Qué equipo ganó más títulos de la UEFA Champions League?", options: ["A) Real Madrid", "B) Barcelona", "C) Bayern Múnich", "D) Manchester United"], answer: "A) Real Madrid", points: 1000},
     {question: "En Fórmula 1, ¿qué color de bandera indica que la carrera debe detenerse?", options: ["A) Amarilla", "B) Roja", "C) Azul", "D) Verde"], answer: "B) Roja", points: 1000},
@@ -99,7 +99,7 @@ const questions = {
     {question: "¿Cuántos pilotos argentinos ganaron el Campeonato Mundial de Pilotos de Fórmula 1?", options: ["A) 1", "B) 2", "C) 3", "D) 5"], answer: "A) 1", points: 5000},
     {question: "¿Quién ganó más torneos Major en la historia del golf?", options: ["A) Tiger Woods", "B) Jack Nicklaus", "C) Phil Mickelson", "D) Ángel Cabrera"], answer: "B) Jack Nicklaus", points: 5000}
   ],
-  "Tax Technical": [
+  "TAX": [
     {question: "Which IRS form is generally used by a partnership to file its annual U.S. federal income tax return?", options: ["A) Form 1040", "B) Form 1065", "C) Form 1120", "D) Form 1041"], answer: "B) Form 1065", points: 1000},
     {question: "For a calendar-year partnership, what is the original federal filing deadline for Form 1065 if no extension is requested?", options: ["A) March 15", "B) April 15", "C) September 15", "D) October 15"], answer: "A) March 15", points: 1000},
     {question: "In which box of Schedule K-1 are charitable contributions and other deductions reported?", options: ["A) Box 5", "B) Box 13", "C) Box 4", "D) Box 19"], answer: "B) Box 13", points: 1000},
