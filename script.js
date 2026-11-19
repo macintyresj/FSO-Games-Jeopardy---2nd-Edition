@@ -210,7 +210,7 @@ function checkAnswer(correct, cat, pt) {
     title: correct ? '¡Correcto!' : 'Incorrecto',
     text: correct 
       ? `¡Sumas ${pt} puntos!` 
-      : `No es correcto${(cat !== "TAX" && cat !== "ACRONIMOS") ? `, pierdes ${pt} puntos` : ''}`,
+      : `No es correcto${(cat !== "Tax Technical" && cat !== "Acrónimos") ? `, pierdes ${pt} puntos` : ''}`,
     icon: correct ? 'success' : 'error',
     confirmButtonText: 'Continuar',
     confirmButtonColor: correct ?'rgb(165,220,134)':'rgb(242 116 116)'
